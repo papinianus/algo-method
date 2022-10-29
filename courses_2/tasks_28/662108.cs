@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Linq;
 using static template.UtilIo;
 
@@ -14,7 +14,8 @@ namespace template
     {
         public static void Solve()
         {
-            throw new NotImplementedException();
+            var inputs = GetInts();
+            (inputs[0] % inputs[1] == 0).YesNo();
         }
     }
 
