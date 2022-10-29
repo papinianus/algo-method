@@ -14,7 +14,7 @@ namespace template
     {
         public static void Solve()
         {
-            throw new NotImplementedException();
+            GetInts().Max().ToString().Echo();
         }
     }
 
@@ -23,20 +23,6 @@ namespace template
         private static string Read() => Console.ReadLine();
         private static char separator = ' ';
         public static void Echo(this string val) => Console.WriteLine(val);
-        public static void Echo(this int val) => Console.WriteLine(val);
-
-        private static void Tell(this bool val, string truly = "Yes", string falsy = "No")
-        {
-            if (val)
-            {
-                Console.WriteLine(truly);
-                return;
-            }
-            Console.WriteLine(falsy);
-        }
-
-        public static void YesNo(this bool val) => val.Tell("Yes", "No");
-
         public static string GetString() => Read();
         public static int GetInt() => int.Parse(Read());
         public static int[] GetInts() => Read().Split(separator).Select(int.Parse).ToArray();
