@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using static template.UtilIo;
@@ -15,7 +15,18 @@ namespace template
     {
         public static void Solve()
         {
-            throw new NotImplementedException();
+            var a = GetStringMultiple(GetInt()).GroupBy(x => x).OrderByDescending(x => x.Count()).ToArray();
+            if (a.Length == 1)
+            {
+                a[0].Key.Echo();
+                return;
+            }
+            if (a[0].Count() == a[1].Count())
+            {
+                "same".Echo();
+                return;
+            }
+            a[0].Key.Echo();
         }
     }
 
