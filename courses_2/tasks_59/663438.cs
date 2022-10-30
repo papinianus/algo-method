@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using static template.UtilIo;
@@ -15,7 +15,7 @@ namespace template
     {
         public static void Solve()
         {
-            throw new NotImplementedException();
+            GetStringMultiple(GetInt()).Select(x => x.Length).Sum().Echo();
         }
     }
 

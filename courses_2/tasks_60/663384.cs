@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+using System;
 using System.Linq;
 using static template.UtilIo;
 
@@ -15,7 +14,8 @@ namespace template
     {
         public static void Solve()
         {
-            throw new NotImplementedException();
+            GetInt();
+            ((int)Math.Floor(GetInts().Average())).Echo();
         }
     }
 
@@ -39,16 +39,6 @@ namespace template
         public static void YesNo(this bool val) => val.Tell("Yes", "No");
 
         public static string GetString() => Read();
-        public static string[] GetStringMultiple(int rowCount)
-        {
-            var results = new List<string>();
-            while (rowCount > 0)
-            {
-                results.Add(GetString());
-                rowCount--;
-            }
-            return results.ToArray();
-        }
         public static int GetInt() => int.Parse(Read());
         public static int[] GetInts() => Read().Split(Separator).Select(int.Parse).ToArray();
         public static long GetLong() => long.Parse(Read());
