@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Linq;
 using static template.UtilIo;
 
@@ -14,17 +14,19 @@ namespace template
     {
         public static void Solve()
         {
-            throw new NotImplementedException();
+            var S = GetString();
+            var T = GetString();
+            (S == T).YesNo();
         }
     }
 
     public static class UtilIo
     {
         private static string Read() => Console.ReadLine();
-        private const char Separator = ' ';
+        private static char separator = ' ';
         public static void Echo(this string val) => Console.WriteLine(val);
         public static void Echo(this int val) => Console.WriteLine(val);
-        public static void Echo(this char val) => Console.WriteLine(val);
+
         private static void Tell(this bool val, string truly = "Yes", string falsy = "No")
         {
             if (val)
@@ -39,8 +41,8 @@ namespace template
 
         public static string GetString() => Read();
         public static int GetInt() => int.Parse(Read());
-        public static int[] GetInts() => Read().Split(Separator).Select(int.Parse).ToArray();
+        public static int[] GetInts() => Read().Split(separator).Select(int.Parse).ToArray();
         public static long GetLong() => long.Parse(Read());
-        public static long[] GetLongs() => Read().Split(Separator).Select(long.Parse).ToArray();
+        public static long[] GetLongs() => Read().Split(separator).Select(long.Parse).ToArray();
     }
 }

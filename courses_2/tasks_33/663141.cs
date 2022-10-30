@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Linq;
 using static template.UtilIo;
 
@@ -14,7 +14,9 @@ namespace template
     {
         public static void Solve()
         {
-            throw new NotImplementedException();
+            var S = GetString();
+            var nums = GetInts().Select(x => x - 1).ToArray();
+            string.Join(string.Empty, S.Select((x, i) => i == nums[0] ? S[nums[1]] : i == nums[1] ? S[nums[0]] : x)).Echo();
         }
     }
 
