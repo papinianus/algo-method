@@ -15,9 +15,13 @@ namespace template
     {
         public static void Solve()
         {
+            var table = Enumerable.Range(1, 9).ToDictionary(x => x, _ => 0);
             GetInt();
-            var ns = GetInts();
-            ns.Zip(ns.Skip(1), (a, b) => new[] { a, b }).Select(x => x[1] - x[0]).Count(x => x > 0).Echo();
+            GetInts().GroupBy(x => x).ToList().ForEach(x => table[x.Key] = x.Count());
+            foreach (var i in table)
+            {
+                i.Value.Echo();
+            }
         }
     }
 

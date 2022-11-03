@@ -16,8 +16,8 @@ namespace template
         public static void Solve()
         {
             GetInt();
-            var ns = GetInts();
-            ns.Zip(ns.Skip(1), (a, b) => new[] { a, b }).Select(x => x[1] - x[0]).Count(x => x > 0).Echo();
+            GetInts().GroupBy(x => x).OrderByDescending(x => x.Count()).First().Key.Echo();
+            //GetInts().GroupBy(x => x).MaxBy(x => x.Count()).Key.Echo();
         }
     }
 
