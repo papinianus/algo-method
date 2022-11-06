@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using static template.UtilIo;
@@ -15,7 +15,8 @@ namespace template
     {
         public static void Solve()
         {
-            throw new NotImplementedException();
+            var nums = GetInts();
+            Enumerable.Range(1, nums[0]).Count(x => Enumerable.Range(1, x).Count(y => x % y == 0) == nums[1]).Echo();
         }
     }
 
@@ -23,7 +24,7 @@ namespace template
     {
         private static string Read() => Console.ReadLine();
         private const char Separator = ' ';
-        
+
         public static void Echo(this string val) => Console.WriteLine(val);
         public static void Echo(this int val) => Console.WriteLine(val);
         public static void Echo(this char val) => Console.WriteLine(val);
