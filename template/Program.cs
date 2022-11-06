@@ -23,6 +23,7 @@ namespace template
     {
         private static string Read() => Console.ReadLine();
         private const char Separator = ' ';
+        
         public static void Echo(this string val) => Console.WriteLine(val);
         public static void Echo(this int val) => Console.WriteLine(val);
         public static void Echo(this char val) => Console.WriteLine(val);
@@ -35,7 +36,6 @@ namespace template
             }
             Console.WriteLine(falsy);
         }
-
         public static void YesNo(this bool val) => val.Tell("Yes", "No");
 
         public static string GetString() => Read();
@@ -53,5 +53,7 @@ namespace template
         public static int[] GetInts() => Read().Split(Separator).Select(int.Parse).ToArray();
         public static long GetLong() => long.Parse(Read());
         public static long[] GetLongs() => Read().Split(Separator).Select(long.Parse).ToArray();
+
+        public static T ident<T>(T val) => val;
     }
 }
