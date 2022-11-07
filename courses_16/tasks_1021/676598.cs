@@ -1,6 +1,7 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using static template.UtilIo;
 
 namespace template
@@ -15,7 +16,11 @@ namespace template
     {
         public static void Solve()
         {
-            throw new NotImplementedException();
+            GetInt();
+            var nums = GetLongs();
+            var sum = nums.Sum();
+            var sqrtSum = nums.Sum(x => x * x);
+            ((sum * sum - sqrtSum) / 2).Echo();
         }
     }
 
@@ -23,7 +28,7 @@ namespace template
     {
         private static string Read() => Console.ReadLine();
         private const char Separator = ' ';
-        
+
         public static void Echo(this string val) => Console.WriteLine(val);
         public static void Echo(this int val) => Console.WriteLine(val);
         public static void Echo(this long val) => Console.WriteLine(val);
