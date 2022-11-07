@@ -1,6 +1,7 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using static template.UtilIo;
 
 namespace template
@@ -15,7 +16,38 @@ namespace template
     {
         public static void Solve()
         {
-            throw new NotImplementedException();
+            GetInt();
+            var nums = GetInts();
+            var sums = new long[nums.Length + 1];
+            sums[0] = 0L;
+            for (var i = 1; i <= nums.Length; i++)
+            {
+                sums[i] = sums[i - 1] + nums[i - 1];
+            }
+            var q = GetInt();
+            while (q > 0)
+            {
+                var pos = GetInt();
+                sums[pos].Echo();
+                q--;
+            }
+            // var sums = nums.Aggregate(new[] { 0L }, (a, b) => a.Concat(new[] { a.Last() + b }).ToArray());
+            // var q = GetInt();
+            // while (q > 0)
+            // {
+            //     var pos = GetInt();
+            //     sums[pos].Echo();
+            //     q--;
+            // }
+            // GetInt();
+            // var nums = GetLongs();
+            // var q = GetInt();
+            // while (q > 0)
+            // {
+            //     var len = GetInt();
+            //     nums.Take(len).Sum().Echo();
+            //     q--;
+            // }
         }
     }
 
@@ -23,7 +55,7 @@ namespace template
     {
         private static string Read() => Console.ReadLine();
         private const char Separator = ' ';
-        
+
         public static void Echo(this string val) => Console.WriteLine(val);
         public static void Echo(this int val) => Console.WriteLine(val);
         public static void Echo(this long val) => Console.WriteLine(val);
