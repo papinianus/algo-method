@@ -23,7 +23,7 @@ namespace template
     {
         private static string Read() => Console.ReadLine();
         private const char Separator = ' ';
-        
+
         public static void Echo(this string val) => Console.WriteLine(val);
         public static void Echo(this int val) => Console.WriteLine(val);
         public static void Echo(this long val) => Console.WriteLine(val);
