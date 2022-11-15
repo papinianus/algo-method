@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using static template.UtilIo;
@@ -15,7 +15,8 @@ namespace template
     {
         public static void Solve()
         {
-            throw new NotImplementedException();
+            var nm = GetDoubles();
+            ((int)Math.Ceiling(nm[0] / nm[1])).Echo();
         }
     }
 
