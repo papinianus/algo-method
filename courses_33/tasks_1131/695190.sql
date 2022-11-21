@@ -1,0 +1,1 @@
+SELECT * FROM `prefectures` WHERE `name` in ( SELECT `name` from `kanto_regions`);
