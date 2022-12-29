@@ -9,7 +9,7 @@
 
 ## langs
 
-- cshapr は mono
+- csharp は mono
 
   - csharp 6.0 未満
   - MinBy/MaxBy がつかえない
