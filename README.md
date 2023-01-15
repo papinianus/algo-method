@@ -23,3 +23,8 @@ pnpm init
 pnpm i -D @types/node typescript@next tsc-watch
 npx tsc --init
 ```
+
+## tooling
+
+- prepare dir and files
+  `./prepFile.ts -t {taskNumber} -c {courseNumebr} -n {submissionNumber} -e {lang as ext i.e. not csharp but cs}`
