@@ -59,5 +59,17 @@ namespace template
         public static double[] GetDoubles() => Read().Split(Separator).Select(double.Parse).ToArray();
 
         public static T ident<T>(T val) => val;
+
+        public static int Gcd(int a, int b) {
+            if (a < b) {
+                return Gcd(b, a);
+            }
+            while (b != 0) {
+                var remainder = a % b;
+                a = b;
+                b = remainder;
+            }
+            return a;
+        }
     }
 }
