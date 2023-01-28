@@ -40,6 +40,7 @@ namespace template
         public static void YesNo(this bool val) => val.Tell("Yes", "No");
 
         public static string GetString() => Read();
+        public static string[] GetStrings() => Read().Split(Separator);
         public static string[] GetStringMultiple(int rowCount)
         {
             var results = new List<string>();
